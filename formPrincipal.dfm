@@ -25,8 +25,6 @@ object uFormPrincipal: TuFormPrincipal
     Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 1133
-    ExplicitHeight = 716
     object PanelHeader: TPanel
       Left = 0
       Top = 0
@@ -37,7 +35,6 @@ object uFormPrincipal: TuFormPrincipal
       Color = 15329769
       ParentBackground = False
       TabOrder = 0
-      ExplicitWidth = 1133
     end
     object PanelCorpo: TPanel
       Left = 0
@@ -49,8 +46,6 @@ object uFormPrincipal: TuFormPrincipal
       Color = 15329769
       ParentBackground = False
       TabOrder = 1
-      ExplicitWidth = 1133
-      ExplicitHeight = 699
       DesignSize = (
         1012
         570)
@@ -69,7 +64,6 @@ object uFormPrincipal: TuFormPrincipal
         Color = clWhite
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 1063
         DesignSize = (
           942
           65)
@@ -116,7 +110,16 @@ object uFormPrincipal: TuFormPrincipal
           Caption = 'Validar'
           TabOrder = 0
           OnClick = btnValidarClick
-          ExplicitLeft = 978
+        end
+        object Button1: TButton
+          Left = 425
+          Top = 13
+          Width = 65
+          Height = 41
+          Anchors = [akRight]
+          Caption = 'Teste'
+          TabOrder = 1
+          OnClick = Button1Click
         end
       end
       object EditNCM: TEdit
@@ -138,7 +141,6 @@ object uFormPrincipal: TuFormPrincipal
         ShowHint = True
         TabOrder = 1
         TextHint = 'NCM'
-        ExplicitLeft = 800
       end
       object EditNome: TSearchBox
         Left = 58
@@ -174,8 +176,6 @@ object uFormPrincipal: TuFormPrincipal
         Color = clWhite
         ParentBackground = False
         TabOrder = 3
-        ExplicitWidth = 1063
-        ExplicitHeight = 599
         object DBGrid1: TDBGrid
           Left = 0
           Top = 0
@@ -189,7 +189,7 @@ object uFormPrincipal: TuFormPrincipal
           Font.Height = -13
           Font.Name = 'Segoe UI'
           Font.Style = []
-          Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+          Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
           ParentFont = False
           ReadOnly = True
           TabOrder = 0
@@ -199,6 +199,21 @@ object uFormPrincipal: TuFormPrincipal
           TitleFont.Name = 'Segoe UI'
           TitleFont.Style = []
           OnDblClick = DBGrid1DblClick
+          Columns = <
+            item
+              Expanded = False
+              FieldName = 'CODNCM'
+              Title.Caption = 'NCM'
+              Width = 108
+              Visible = True
+            end
+            item
+              Expanded = False
+              FieldName = 'DESCRICAO'
+              Title.Caption = 'DESCRI'#199#195'O'
+              Width = 799
+              Visible = True
+            end>
         end
       end
     end
@@ -281,5 +296,70 @@ object uFormPrincipal: TuFormPrincipal
     DataSet = ClientDataSet1
     Left = 718
     Top = 369
+  end
+  object ClientDataSet2: TClientDataSet
+    Aggregates = <>
+    FieldDefs = <
+      item
+        Name = 'CODNCM'
+        DataType = ftString
+        Size = 8
+      end
+      item
+        Name = 'DESCRICAO'
+        DataType = ftString
+        Size = 200
+      end
+      item
+        Name = 'DATAINICIO'
+        DataType = ftDate
+      end
+      item
+        Name = 'DATAFIM'
+        DataType = ftDate
+      end
+      item
+        Name = 'TIPOATO'
+        DataType = ftString
+        Size = 20
+      end
+      item
+        Name = 'NUMEROATO'
+        DataType = ftString
+        Size = 6
+      end
+      item
+        Name = 'ANOATO'
+        DataType = ftInteger
+      end>
+    IndexDefs = <>
+    Params = <>
+    StoreDefs = True
+    Left = 755
+    Top = 424
+    object StringField1: TStringField
+      FieldName = 'CODNCM'
+      Size = 8
+    end
+    object StringField2: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 200
+    end
+    object DateField1: TDateField
+      FieldName = 'DATAINICIO'
+    end
+    object DateField2: TDateField
+      FieldName = 'DATAFIM'
+    end
+    object StringField3: TStringField
+      FieldName = 'TIPOATO'
+    end
+    object StringField4: TStringField
+      FieldName = 'NUMEROATO'
+      Size = 6
+    end
+    object IntegerField1: TIntegerField
+      FieldName = 'ANOATO'
+    end
   end
 end
